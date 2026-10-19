@@ -74,9 +74,10 @@ export class WordpressApi implements ICredentialType {
   - Not strictly required, but strongly recommended.
   - The `stellarWalletApi` credential has no `test` request: there is no API to call. It is tested
     from the Stellar Signer node instead, with `testedBy: 'stellarWalletApiTest'` in the node's
-    `credentials` and a `methods.credentialTest` function that validates the secret key without
-    using the network. On success n8n shows its own fixed text, so the test's message never reaches
-    the user; the account's public key is in the node's `publicKey` output (see `CREDENTIALS.md`)
+    `credentials` and a `methods.credentialTest` function that validates the secret key and the
+    policy fields without using the network. On success n8n shows its own fixed text, so the test's
+    message never reaches the user; the account's public key is in the node's `publicKey` output
+    (see `CREDENTIALS.md`)
 - `authenticate` describes how to modify requests for declarative-style nodes and the HTTP Request
   node.
 
